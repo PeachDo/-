@@ -16,7 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from shareapp import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.sharemain,name="sharemain"),
+    path('/photo/',views.photo,name="photo"),
+    path('/sports/',views.sports,name="sports"),
 ]
