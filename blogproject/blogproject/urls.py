@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import blogapp.views
+import shareapp.views
 import sellapp.views
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', sellapp.views.sellhome, name="sellhome"),
+    path('', blogapp.views.mainhome, name="mainhome"),
+    path('/sharemain/', shareapp.views.sharemain,name="sharemain"),
+    path('/photo/', shareapp.views.photo,name="photo"),
+    path('/sports/', shareapp.views.sports,name="sports"),
+    path('/sellhome/', sellapp.views.sellhome, name="sellhome"),
+
 ]
